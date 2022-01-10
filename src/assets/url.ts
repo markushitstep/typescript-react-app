@@ -1,1 +1,0 @@
-export const urlTodos = 'http://jsonplaceholder.typicode.com/todos';
