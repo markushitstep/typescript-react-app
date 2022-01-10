@@ -1,1 +1,1 @@
-export const todoUrl: string | undefined = process.env.TODO_URL;
+export const todoUrl = process.env.REACT_APP_URL_TODO;

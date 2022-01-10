@@ -25,7 +25,7 @@ export const fetchTodos = () => {
             dispatch<FetchTodosAction>(fetchTodosAction(response.data));
         }
         else {
-            throw Error("Todourl undefined")
+            throw Error(`${todoUrl} undefined`)
         }
     }
 };
