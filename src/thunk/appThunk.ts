@@ -13,6 +13,11 @@ export interface FetchTodosAction {
     payload: Todo[];
 }
 
+export interface DeleteTodosAction {
+    type: ActionTypes.deleteTodo;
+    payload: number;
+}
+
 export const fetchTodos = () => {
     return async (dispatch: Dispatch) => {
         if (todoUrl) {
@@ -22,10 +27,18 @@ export const fetchTodos = () => {
                 type: ActionTypes.fetchTodos,
                 payload: response.data
             });
-            dispatch<FetchTodosAction>(fetchTodosAction(response.data));
+            dispatch(fetchTodosAction(response.data));
         }
         else {
             throw Error(`${todoUrl} undefined`)
         }
+    }
+};
+
+export const deleteTodos = (id: number) => {
+
+    return {
+        type: ActionTypes.deleteTodo, 
+        payload: id
     }
 };
