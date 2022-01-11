@@ -4,7 +4,7 @@ import { todoUrl } from '../config'
 import { ActionTypes, fetchTodosAction } from '../actions/appActions'
 
 export interface Todo {
-    id: string;
+    id: number;
     title: string;
     completed: boolean;
 }
@@ -36,7 +36,6 @@ export const fetchTodos = () => {
 };
 
 export const deleteTodos = (id: number) => {
-
     return {
         type: ActionTypes.deleteTodo, 
         payload: id
